@@ -28,9 +28,6 @@ abstract public class Product implements Discountable {
 
 
     public void getDetails(){
-        System.out.println("Product is called "+this.name);
-        System.out.println("Product is priced "+this.price);
-        System.out.println("Product has no Product Category");
     }
 
     @Override
@@ -66,6 +63,12 @@ class Electronics extends Product{
         System.out.println("Electronic Warranty is called");
     }
 
+    @Override
+    public void getDetails(){
+        System.out.println("Product is called "+ this.getName());
+        System.out.println("Product is priced "+ this.getPrice());
+        System.out.println("Product is of Product Category "+ ProductCategory.ELECTRONICS);
+    }
 }
 
 class Clothing extends Product{
@@ -79,4 +82,10 @@ class Clothing extends Product{
         System.out.println("Clothing Return Policy is called");
     }
 
+    @Override
+    public void getDetails(){
+        System.out.println("Product is called "+ this.getName());
+        System.out.println("Product is priced "+ this.getPrice());
+        System.out.println("Product is of Product Category "+ ProductCategory.CLOTHING);
+    }
 }

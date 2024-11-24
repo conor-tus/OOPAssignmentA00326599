@@ -95,7 +95,7 @@ public class Shop {
         shop.addMultipleProductsToBasket(shirts,chocolate);
 
         DiscountElectronics de = new DiscountElectronics();
-        de.discountProduct(shop.getBasket(),50);
+        de.discountProduct(shop.getBasket(),41);
 
         Receipt receipt = shop.buyBasket(100);
 
