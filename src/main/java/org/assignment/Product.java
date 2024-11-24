@@ -1,6 +1,9 @@
 package org.assignment;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 abstract public class Product implements Discountable {
 
     enum ProductCategory {
@@ -9,14 +12,18 @@ abstract public class Product implements Discountable {
         GROCERIES
     }
 
-    private final String id,name;
-    private final double price;
+    private static int idCounter = 0;
+    private static List<Product> itemCatalouge = new ArrayList<>();
+    private final String id;
+    private final String name;
+    private double price;
 
 
-    public Product(String id, String name, double price) {
-        this.id = id;
+    public Product( String name, double price) {
+        this.id = String.valueOf(++idCounter);
         this.name = name;
         this.price = price;
+        itemCatalouge.add(this);
     }
 
 
@@ -27,14 +34,8 @@ abstract public class Product implements Discountable {
     }
 
     @Override
-    public void getDiscount(double discount){
-        double discountedPrice = (price/100)*discount;
-        System.out.println("The price after discount is + " + discountedPrice);
-    }
-
-    @Override
-    public double applyDiscount(double discount) {
-        return 0;
+    public void applyDiscount(double discount) {
+        this.price = (this.price/100)*(100-discount);
     }
 
     public String getId() {
@@ -49,12 +50,15 @@ abstract public class Product implements Discountable {
         return price;
     }
 
+    public List<Product> getItemCatalouge() {
+        return itemCatalouge;
+    }
 }
 
 class Electronics extends Product{
 
-    public Electronics(String id, String name, double price) {
-        super(id, name, price);
+    public Electronics(String name, double price) {
+        super(name, price);
         ProductCategory category = ProductCategory.ELECTRONICS;
     }
 
@@ -66,8 +70,8 @@ class Electronics extends Product{
 
 class Clothing extends Product{
 
-    public Clothing(String id, String name, double price) {
-        super(id, name, price);
+    public Clothing( String name, double price) {
+        super(name, price);
         ProductCategory category = ProductCategory.CLOTHING;
     }
 
