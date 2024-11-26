@@ -1,5 +1,6 @@
 package org.assignment;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public record Receipt(int id, double totalCost, double amountPaid, double changeGiven, List<Product> productsBought){
@@ -15,6 +16,7 @@ public record Receipt(int id, double totalCost, double amountPaid, double change
         formattedString.append("Total cost: ").append(String.format("%.2f", totalCost)).append("\n");
         formattedString.append("Amount paid: ").append(String.format("%.2f", amountPaid)).append("\n");
         formattedString.append("Change given: ").append(String.format("%.2f", changeGiven)).append("\n");
+        formattedString.append(LocalDateTime.now());
         return formattedString.toString();
     }
 

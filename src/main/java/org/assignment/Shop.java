@@ -88,9 +88,9 @@ public class Shop {
         Clothing shirts =  new Clothing("Shirts",5.0);
         Product chocolate = new Clothing("Chocolate",3.0);
 
+        shoes.getClothingReturnPolicy(true);
         shoes.getClothingReturnPolicy();
         Xbox.getElectronicWarranty();
-
 
         shop.addProductToBasket(Nintendo);
         shop.addProductToBasket(Xbox);

@@ -77,6 +77,16 @@ class Clothing extends Product{
         System.out.println("Clothing Return Policy is called");
     }
 
+    public void getClothingReturnPolicy(boolean isItemFromASale ){
+        if (isItemFromASale) {
+            System.out.println("Clothing return policy not applicable");
+        }
+        else{
+            System.out.println("Clothing Return Policy is called");
+        }
+
+    }
+
     @Override
     public void getDetails(){
         System.out.println("Product is called "+ this.getName());
