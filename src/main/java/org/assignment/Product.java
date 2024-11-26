@@ -35,9 +35,7 @@ abstract public class Product implements Discountable {
         this.price = (this.price/100)*(100-discount);
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() {return id;}
 
     public String getName() {
         return name;
@@ -47,9 +45,6 @@ abstract public class Product implements Discountable {
         return price;
     }
 
-    public List<Product> getItemCatalouge() {
-        return itemCatalouge;
-    }
 }
 
 class Electronics extends Product{

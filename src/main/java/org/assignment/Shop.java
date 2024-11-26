@@ -64,15 +64,18 @@ public class Shop {
     public void freeGameCheck(List<Product> basket){
         for(Product p : basket){
             switch (p.getName()){
-                case"Xbox":
-                    System.out.println("Free game! Xbox fifa 2025");
-                    break;
-                case"Switch":
-                    System.out.println("Free game! Switch fifa 2025");
-                    break;
-                case"Playstation":
-                    System.out.println("Free game! Playstation fifa 2025");
-            }
+//                case"Xbox":
+//                    System.out.println("Free game! Xbox fifa 2025");
+//                    break;
+//                case"Switch":
+//                    System.out.println("Free game! Switch fifa 2025");
+//                    break;
+//                case"Playstation":
+//                    System.out.println("Free game! Playstation fifa 2025");
+                case "Xbox" -> System.out.println("Free game! Xbox fifa 2025");
+                case "Switch" -> System.out.println("Free game! Switch fifa 2025");
+                case "Playstation" -> System.out.println("Free game! Playstation fifa 2025");
+            };
         }
     }
 
